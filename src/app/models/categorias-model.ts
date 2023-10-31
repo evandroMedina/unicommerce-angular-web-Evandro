@@ -1,7 +1,7 @@
 import { Categoria } from "./categoria-model.js";
 
 export class Categorias {
-    private categorias: Categoria[] = [];
+    public categorias: Categoria[] = [];
 
     public add(novo: Categoria): void {
         this.categorias.push(novo);

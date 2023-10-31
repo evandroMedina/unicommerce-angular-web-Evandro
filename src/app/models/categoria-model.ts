@@ -8,10 +8,10 @@ export class Categoria{
       }
 
       get _nome(): string {
-        return this.nome
+        return this.nome;
       }
 
       get _status(): boolean {
-        return this.status
+        return this.status;
       }
 }
