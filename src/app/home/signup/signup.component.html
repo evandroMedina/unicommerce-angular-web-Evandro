@@ -1,0 +1,58 @@
+<h4 class="text-center"> Registro de Novo Usuário!</h4>
+
+<form [formGroup]="signupForm" class="form mt-4" (submit)="signup()">
+
+    <div class="form-group">
+        <input #inputLogin formControlName="login" placeholder="login" class="form-control">
+          <ap-vmessage 
+            *ngIf="signupForm.get('login').errors?.required"
+            text="Login requerido">
+          </ap-vmessage>
+         <!-- <ap-vmessage 
+            *ngIf="signupForm.get('login').errors?.email"
+            text="E-mail inválido">
+          </ap-vmessage>
+           -->
+          <ap-vmessage 
+            *ngIf="signupForm.get('login').errors?.minilength"
+            text="Tamanho mínimo é 2">
+          </ap-vmessage>
+          <ap-vmessage 
+            *ngIf="signupForm.get('login').errors?.maxlength"
+            text="Tamanho máximo é 40">
+          </ap-vmessage>
+          <ap-vmessage 
+            *ngIf="signupForm.get('login').errors?.pattern"
+            text="Todas as letras devem ser minúsculas">
+          </ap-vmessage>
+          
+          <ap-vmessage
+            text="Login already taken"
+            *ngIf="signupForm.get('login').errors?.loginTaken">
+          </ap-vmessage>
+          <small *ngIf="signupForm.get('login').valid" class="text-success">User available</small>
+
+     </div>
+
+    <div class="form-group">
+        <input formControlName="senha" type="password" placeholder="senha" class="form-control">
+         <ap-vmessage 
+            *ngIf="signupForm.get('senha').errors?.required"
+            text="Senha requerida">
+         </ap-vmessage>
+         <ap-vmessage 
+            *ngIf="signupForm.get('senha').errors?.minilength"
+            text="Tamanho mínimo é 3">
+        </ap-vmessage>
+        <ap-vmessage 
+            *ngIf="signupForm.get('senha').errors?.maxlength"
+            text="Tamanho máximo é 14">
+        </ap-vmessage>
+     </div>
+
+   <!-- <button class="btn btn-primary btn-block">Register</button> --> 
+    <button [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary btn-block">Register</button>
+
+
+    <p>Já é usuário?<a [routerLink]="['']">Sign In!</a></p>
+</form>

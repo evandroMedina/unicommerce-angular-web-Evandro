@@ -15,13 +15,32 @@ import { ProdutoFormComponent } from './produtos/produto-form/produto-form.compo
 import { ProdutoListComponent } from './produtos/produto-list/produto-list.component';
 import { ProdutoListResolver } from './produtos/produto-list/produto-list.resolver';
 import { SignInComponent } from './home/signin/signin.component';
+import { AuthGuard } from './core/auth/auth.guard';
+import { SignupComponent } from './home/signup/signup.component';
+import { HomeComponent } from './home/home.component';
+import { UsuarioListComponent } from './usuarios/usuario-list/usuario-list.component';
+import { UsuarioListResolver } from './usuarios/usuario-list/usuario-list.resolver';
 
 const routes: Routes = [
 
     {
         path: '', // locallhost:4200/
-        component: SignInComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard], // se estiver logado já vai para a lista de produtos
+        children: [
+            {
+                path: '', // locallhost:4200/
+                component: SignInComponent,
+            },
+        
+            {
+                path: 'signup', 
+                component: SignupComponent,
+            },
+        ]
     },
+
+
 
     { 
         path: 'categoria', 
@@ -55,6 +74,14 @@ const routes: Routes = [
         resolve: {
             produtos: ProdutoListResolver
         } 
+    },
+    { 
+        path: 'usuario/lista', 
+        component: UsuarioListComponent,
+        canActivate: [AuthGuard],  
+        resolve: {
+            usuarios: UsuarioListResolver
+        }
     },
     { 
         path: '**', 
