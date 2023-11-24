@@ -20,6 +20,7 @@ import { SignupComponent } from './home/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { UsuarioListComponent } from './usuarios/usuario-list/usuario-list.component';
 import { UsuarioListResolver } from './usuarios/usuario-list/usuario-list.resolver';
+import { MenuComponent } from './core/menu/menu.component';
 
 const routes: Routes = [
 
@@ -37,10 +38,14 @@ const routes: Routes = [
                 path: 'signup', 
                 component: SignupComponent,
             },
+ 
         ]
     },
 
-
+    {
+        path: 'menu', 
+        component: MenuComponent,
+    },
 
     { 
         path: 'categoria', 

@@ -38,7 +38,7 @@ export class SignInComponent implements OnInit {
         authenticate(login, senha)
         .subscribe(
            // () => this.router.navigate(['user', login]), //ao logar, direciona p/ user/l
-           () => this.router.navigateByUrl('produto/lista'),
+           () => this.router.navigateByUrl('/menu'),
            err => {
             console.log(err);
             this.loginForm.reset()

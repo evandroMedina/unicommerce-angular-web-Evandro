@@ -1,0 +1,35 @@
+<body>
+    <div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">Home</a>
+
+<button class="navbar-toggler" 
+    type="button"
+    (click)="toggleNavbar()">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+    <div class="collapse navbar-collapse" #navbar>
+      <div class="navbar-nav mr-auto">
+        <a class="nav-item nav-link" [routerLink]="['/categoria/lista']">Categorias</a>
+        <a class="nav-item nav-link" [routerLink]="['/cliente/lista']">Clientes</a>
+        <a class="nav-item nav-link" [routerLink]="['/produto/lista']">Produtos</a>
+        <a class="nav-item nav-link" [routerLink]="['/categoria']">Cadastro de Categoria</a>
+        <a class="nav-item nav-link" [routerLink]="['/cliente']">Cadastro de Cliente</a>
+        <a class="nav-item nav-link" [routerLink]="['/produto']">Cadastro de Produto</a>
+      </div>
+    </div>
+  </nav>
+    </div>
+    <br>
+
+    <div class="text-center">
+      <h2>Bem-vindo ao Sistema<br>Unicommerce!</h2>
+      <div class="row justify-content-center">
+         <!--  <div class="col-sm-6">
+              <img class="img-fluid" src="/assets/imagem/unicommerce.png" alt="Welcome">
+          </div>
+          -->
+      </div>
+  </div>
+  </body>

@@ -53,6 +53,8 @@
    <!-- <button class="btn btn-primary btn-block">Register</button> --> 
     <button [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary btn-block">Register</button>
 
-
-    <p>Já é usuário?<a [routerLink]="['']">Sign In!</a></p>
+    <br>
+    <p style="display: inline;">Já é usuário?</p>
+    <a [routerLink]="['']" style="margin-left: 10px;">Faça o login!</a>
+    
 </form>
