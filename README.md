@@ -14,6 +14,6 @@ Projeto de estudos: Interface **frontend em Angular** desenvolvida para consumo 
 - Aplicar boas práticas de **estruturação de projetos Angular**;
 - Desenvolver uma interface limpa, funcional e de fácil manutenção.
 
-## 🧪 Motivação
+## Motivação
 
 Este projeto tem como foco o **aprendizado prático** de Angular em um contexto de integração com backend, possibilitando a construção de aplicações modernas, escaláveis e orientadas a componentes.
